@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { db } from './firebase';
-import Mensajes from './components/Mensajes';
+//import Mensajes from './components/Mensajes';
+import Conversaciones from './components/Conversaciones';
 
 class App extends Component {
   constructor(){
@@ -21,7 +22,8 @@ class App extends Component {
   render() {
     return (
       <div style={estilos.mainDiv}>
-        <Mensajes />
+        <Conversaciones />
+        {/*<Mensajes />*/}
       </div>
     );
   }
