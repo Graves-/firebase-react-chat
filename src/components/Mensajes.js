@@ -28,14 +28,13 @@ export default class Mensajes extends Component {
                         msgId: convoItem.msgId,
                         senderId: convoItem.senderId,
                         text: convoItem.text,
-                        time: convoItem.time
+                        time: convoItem.time,
+                        fecha: convo.fecha
                     });
                 });
-                /*
                 msgArray = msgArray.sort((a,b) => {
                     return new Date(a.time) - new Date(b.time);
                 })
-                */
                 this.setState({mensajes: msgArray});
             });
         });
@@ -71,7 +70,7 @@ export default class Mensajes extends Component {
             key: genKey,
             senderId: this.state.user,
             text: this.state.msgText,
-            time: date.toLocaleString()
+            time: date.toLocaleString(),
         });
         this.setState({msgText: ''});
     }
