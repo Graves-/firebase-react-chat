@@ -8,7 +8,8 @@ export default class Mensajes extends Component {
     constructor(){
         super();
         this.state = {
-            user: 'edb5m56s2c',
+            //user: 'edb5m56s2c',
+            user: '2hxvrnxcvo',
             convo: 'p2jphcbid1',
             msgText: '',
             mensajes: [],
@@ -30,9 +31,11 @@ export default class Mensajes extends Component {
                         time: convoItem.time
                     });
                 });
+                /*
                 msgArray = msgArray.sort((a,b) => {
                     return new Date(a.time) - new Date(b.time);
                 })
+                */
                 this.setState({mensajes: msgArray});
             });
         });
