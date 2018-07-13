@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { db } from './firebase';
 //import Mensajes from './components/Mensajes';
 import Conversaciones from './components/Conversaciones';
+import { Layout, Menu } from 'antd';
+
+const { Header, Content } = Layout;
 
 class App extends Component {
   constructor(){
@@ -22,8 +25,23 @@ class App extends Component {
   render() {
     return (
       <div style={estilos.mainDiv}>
-        <Conversaciones />
-        {/*<Mensajes />*/}
+        <Layout>
+            <Header className="header">
+              <div className="logo" />
+              <Menu
+                theme="dark"
+                mode="horizontal"
+                defaultSelectedKeys={['2']}
+                style={{ lineHeight: '64px' }}>
+                <Menu.Item key="1">CHAT UG</Menu.Item>
+              </Menu>
+            </Header>
+            <Layout>
+                <Content style={{ background: '#fff', margin: 0, minHeight: 280 }}>
+                  <Conversaciones />
+                </Content>
+            </Layout>
+          </Layout>
       </div>
     );
   }
@@ -56,7 +74,7 @@ const estilos = {
     fontSize: 8
   },
   mainDiv: {
-    padding: 50
+    //padding: 50
   }
 }
 

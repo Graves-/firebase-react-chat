@@ -30,6 +30,9 @@ export default class Mensajes extends Component {
                         time: convoItem.time
                     });
                 });
+                msgArray = msgArray.sort((a,b) => {
+                    return new Date(a.time) - new Date(b.time);
+                })
                 this.setState({mensajes: msgArray});
             });
         });
